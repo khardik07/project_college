@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Weather Prediction</title>
+    <style>
+        html {
+            background-size: cover;
+            background-color:lightblue;
+            
+        }
+
+        #container {
+            left: 0;
+            right: 0;
+            margin-top: 1cm;
+            margin: auto;
+            width: 500px;
+            height: 320px;
+            border-radius: 5px;
+            background: rgba(3, 3, 3, 0.25);
+            box-shadow: 1px 1px 10px;
+        }
+
+        h1 {
+            font-size: 2cm;
+            font-weight: bold;
+            font-size: 4.25rem;
+            font-family: "Inconsolata", monospace;
+            text-align: center;
+            color: black;
+            margin-top: 0%;
+        }
+
+        form {
+            width: 200px;
+            padding: 25px;
+            margin: auto;
+        }
+
+        input {
+            font-family: 'Open Sans Condensed', sans-serif;
+            text-decoration: none;
+            width: 100%;
+            display: flex;
+            /* margin: 9px auto; */
+            font-size: 17px;
+            color: #fff;
+            padding: 7.5px;
+            border-radius: 6px;
+            border: none;
+            background: rgba(3, 3, 3, .1);
+            -webkit-transition: all 2s ease-in-out;
+            -moz-transition: all 2s ease-in-out;
+            -o-transition: all 2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+        }
+
+        #submit-btn {
+            background-color: rgb(102, 102, 107);
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        #submit-btn:hover {
+            opacity: 0.8;
+        }
+
+        #result {
+            font-size: 2cm;
+            font-weight: bold;
+            text-align: center;
+            color:black;
+        }
+
+        input:focus {
+            outline: none;
+            box-shadow: 3px 3px 10px #333;
+            background: rgba(3, 3, 3, .18);
+        }
+        .about-section {
+            padding: 50px;
+            text-align: center;
+            background-color: #474e5d;
+            color: white;
+            position: relative;
+            margin: 0%;
+}
+    </style>
+</head>
+
+<body style="margin: 0%;">
+    <h1>Temperature Prediction</h1>
+    <div id="container">
+        <form method="POST" action="/predict">
+            <!-- <label >Year:</label> --><br>
+            <input type="number" name="year" placeholder="Year" required id="date">
+            <!-- <label>Month:</label> --><br>
+            <input type="number" name="month" placeholder="Month" required id="date">
+            <br>
+            <!-- <label>Day:</label> -->
+            <input type="number" name="day" placeholder="Day" required>
+            <br><br>
+            <input type="submit" value="Predict" id="submit-btn">
+        </form>
+
+    </div>
+
+
+    <br>
+    <div id="result"><br>{{pred}}<br></div><br><br>
+    <div class="about-section">
+        
+        <p>The Prediction is based on the Limited Dataset of Weather Report of TELANGANA</p>
+        
+    </div>
+</body>
+
+</html>
